@@ -1,0 +1,42 @@
+{% extends "store/blank.html" %}
+
+{% block body %}
+
+<form action="/storedamageditempost" method="POST">
+
+<table class="table table-bordered">
+
+    <tr>
+        <td width="150px">Product Name</td>
+        <td><select name="pid" class="form-control">
+
+            {% for i in res %}
+
+            <option value="{{ i['product_id'] }}">{{ i['product_name'] }}</option>
+
+            {% endfor %}
+
+        </select></td>
+    </tr>
+    <tr>
+        <td>Damaged Qty</td>
+        <td>
+            <input type="number" name="qty" required class="form-control"/>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="Submit" class="btn btn-success"/>
+        </td>
+    </tr>
+</table>
+
+
+
+</form>
+
+
+
+
+{% endblock %}

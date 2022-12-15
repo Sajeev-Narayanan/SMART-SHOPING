@@ -1,0 +1,21 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+
+
+    {% if s %}
+    <h3>Saved Successfully</h3>
+    {% endif %}
+
+<form id="form1" name="form1" method="post" action="/adm_add_category_post">
+  <table class="table table-bordered">
+    <tr>
+        <td width="150px">Category Name</td>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" name="button" id="button" value="ADD" class="btn btn-info" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

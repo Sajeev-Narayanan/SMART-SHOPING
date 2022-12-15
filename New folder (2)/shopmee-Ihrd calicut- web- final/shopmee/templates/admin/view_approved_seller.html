@@ -1,0 +1,34 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/adm_reject_seller">
+  <table class="table table-bordered">
+    <tr>
+      <th width=50px>Sl No</th>
+      <th>Seller name</th>
+      <th>Email ID</th>
+      <th>Ph no</th>
+        <th>Address </td>
+
+      <th>Image</th>
+      <th width=50px>&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{i['seller_name']}}</td>
+      <td>{{i['email_id']}}</td>
+      <td>&nbsp;{{i['ph_no']}}</td>
+      <td>{{i['house_name']}}<br>
+  {{i['city']}}<br>
+   {{i['district']}}<br>{{i['state']}}<br>
+      <td><img src="{{i['image']}}" height="100" width="100"/> </td>
+        <td><input type="checkbox" name="ids" value="{{ i['login_id'] }}"/> </td>
+{#      <td><a href="/adm_reject_seller/{{  }}"class="btn btn-danger" type="checkbox">Reject</a></td>#}
+    </tr>
+      {% endfor %}
+  <tr>
+      <td colspan="7" align="center"><input type="submit" value="Reject" name="btn" class="btn btn-danger" onclick="return confirm('Are you sure>')"/> </td>
+  </tr>
+  </table>
+</form>
+{% endblock %}

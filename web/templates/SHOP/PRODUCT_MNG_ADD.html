@@ -1,0 +1,60 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/product_add_post" enctype="multipart/form-data">
+<table class="table table-hover" >
+  <tr>
+    <th>CATEGORY</th>
+    <td>
+      <label for="select2"></label>
+      <select name="select2"class="form-control" id="select2">
+      <option>-----select-----</option>
+           {% for i in val %}
+          <option value="{{ i['category_id'] }}"> {{ i['category_name'] }}</option>
+          {% endfor %}
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>NAME</th>
+    <td>
+      <label for="textfield"></label>
+      <input type="text" name="textfield"class="form-control" id="textfield" />
+    </td>
+  </tr>
+ <tr>
+    <th>IMAGE</th>
+    <td>
+      <label for="textfield"></label>
+      <input type="file" name="file"class="form-control" id="textfield" />
+    </td>
+  </tr>
+  <tr>
+    <th>BRAND</th>
+    <td>
+      <label for="textfield2"></label>
+      <input type="text" name="textfield2"class="form-control" id="textfield2" />
+    </td>
+  </tr>
+{#  <tr>#}
+{#    <th width="160px">QUANTITY</th>#}
+{#    <td>#}
+{#     <label for="textfield4"></label>#}
+{#      <input type="text" name="textfield4"class="form-control" id="textfield4" />#}
+{#    </td>#}
+{#  </tr>#}
+ <tr>
+    <th>PRICE</th>
+    <td>
+      <label for="textfield3"></label>
+      <input type="text" name="textfield3"class="form-control" id="textfield3" />
+    </td>
+  </tr>
+  <tr>
+      <td></td>
+    <td>
+      <input type="submit" name="button" class="btn btn-success"id="button" value="ADD" />
+    </td>
+  </tr>
+</table>
+</form>
+{% endblock %}

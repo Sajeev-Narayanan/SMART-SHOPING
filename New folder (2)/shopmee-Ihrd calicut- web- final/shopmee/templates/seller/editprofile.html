@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="/static/reg_temp/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/static/reg_temp/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="/static/reg_temp/https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/static/reg_temp/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/static/reg_temp/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/static/reg_temp/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title" align="center"><u><b>Registration Form</b></u></h2>
+                    <form method="POST" action="/seller_register_post" enctype="multipart/form-data">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>NAME</label></b>
+                                    <input class="input--style-4" type="text" name="textfield" value="{{ data['seller_name'] }}" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>EMAIL</label></b>
+                                    <input class="input--style-4" type="text" name="textfield2" value="{{ data['email_id'] }}" required>
+                                </div>
+                            </div>
+                        </div>
+ <div class="row row-space">
+                        <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>Date of birth</label></b>
+                                    <input class="input--style-4" type="date" name="textfield11" value="{{ data['dob'] }}" required >
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>PHONE NUMBER</label></b>
+                                    <input class="input--style-4" type="text" name="textfield3" value="{{ data['ph_no'] }}" required>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label"><b>STORE NAME</label></b>
+                                        <input class="input--style-4" type="text" name="textfield4" value="{{ data['house_name'] }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                 <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label"><b>CITY</label></b>
+                                        <input class="input--style-4" type="text" name="textfield5" value="{{ data['city'] }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>DISTRICT</label></b>
+                                    <input class="input--style-4" type="text" name="textfield6" value="{{ data['district'] }}" required>
+                                </div>
+
+                                 </div>
+                                <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>STATE</label></b>
+                                    <input class="input--style-4" type="text" name="textfield7" value="{{ data['state'] }}" required>
+                                </div>
+                            </div>
+                                <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>LONGITUDE</label></b>
+                                    <input class="input--style-4" type="text" name="textfielda" value="{{ data['longitude'] }}" required>
+                                </div>
+                            </div>
+                                <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>LATITUDE</label></b>
+                                    <input class="input--style-4" type="text" name="textfieldb" value="{{ data['latitude'] }}" required>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>PHOTO</label></b>
+                                    <td>&nbsp;<img src="{{ data['image'] }}" height="100px" width="100px"></td>
+                                    <input type="file"  name="fileField" value="{{ data['image'] }}" required>
+                                </div>
+                            </div>
+{#                        <div class="input-group">#}
+{#                            <label class="label">Subject</label>#}
+{#                            <div class="rs-select2 js-select-simple select--no-search">#}
+{#                                <select name="subject">#}
+{#                                    <option disabled="disabled" selected="selected">Choose option</option>#}
+{#                                    <option>Subject 1</option>#}
+{#                                    <option>Subject 2</option>#}
+{#                                    <option>Subject 3</option>#}
+{#                                </select>#}
+{#                                <div class="select-dropdown"></div>#}
+{#                            </div>#}
+{#                        </div>#}</b>
+                        <div class="p-t-15">
+                           <br><br><center> <input class="btn btn--radius-2 btn--blue"  align="center" type="submit" value="Register"></input></center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/static/reg_temp/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/static/reg_temp/vendor/select2/select2.min.js"></script>
+    <script src="/static/reg_temp/vendor/datepicker/moment.min.js"></script>
+    <script src="/static/reg_temp/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/static/reg_temp/js/global.js"></script>
+        </div>
+    </div>
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

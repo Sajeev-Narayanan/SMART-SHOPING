@@ -1,0 +1,41 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+
+
+<body>
+<form action="/seller_view_store" method="get"><table class="table table-bordered">
+  <tr>
+    <td width=50px>Sl. No</td>
+    <td>Store Name</td>
+    <td>Email</td>
+{#    <td>phone</td>#}
+    <td>Address</td>
+{#    <td>latitude</td>#}
+{#    <td>longitude</td>#}
+    <td>Manager Name</td>
+{#    <td>manager_phone</td>#}
+
+    <td width=50px>&nbsp;</td>
+    <td width=50px>&nbsp;</td>
+
+
+    </tr>
+     {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+{#      <td>{{ i['store_id'] }}</td>#}
+      <td><img src="{{ i['manager_image'] }}" width="50" height="50"/><br>{{ i['store_name'] }}</td>
+      <td>{{ i['email_id'] }}</td>
+{#        <td>{{ i['phone'] }}</td>#}
+        <td>{{ i['place'] }}<br>Latitude:{{ i['latitude'] }}<br>Longitude:{{ i['longitude'] }}</td>
+        <td>{{ i['manager_name'] }}<br>Ph:{{ i['manager_phone'] }}</td>
+
+    <td><a href="/seller_edit_store/{{i['login_id'] }}" class="btn btn-success">Edit</a> </td><td><a href="#" class="btn btn-danger" onclick="return confirm('are you want to delete? ')">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}
+

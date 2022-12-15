@@ -1,0 +1,18 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/adm_reply_post">
+  <table class="table table-bordered">
+    <tr>
+      <th width="150px"><b>Complaint</b></th>
+      <th>{{ data["complaint"] }}</th>
+    </tr>
+    <tr>
+      <th><b>Reply</b></th>
+      <td><input type="text" name="textfield2" required class="form-control" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"align="center"><input type="submit" name="button" id="button" value="Send" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+        <td width=50px><b>Sl No</b></td>
+        <td><b>Date</b></td>
+        <td><b>Customer Name</b></td>
+        <td><b>Customer Image</b></td>
+        <td><b>Review</b></td>
+        <td><b>Rating</b></td>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['date'] }}</td>
+      <td>{{ i['customer_name'] }}</td>
+      <td>&nbsp;<img src="{{ i['image'] }}" width="100px" height="100p"></td>
+      <td>{{ i['review'] }}</td>
+      <td>{{ i['rating'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

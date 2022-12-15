@@ -1,0 +1,40 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+       <tr>
+      <td><a href="/home2">HOME</a></td>
+    </tr>
+    <tr>
+      <td><a href="/signup">SIGNUP</a></td>
+    </tr>
+      <tr>
+      <td><a href="/change_password">CHANGE PASSWORD</a></td>
+    </tr>
+    <tr>
+      <td><a href="/view_profile">VIEW PROFILE</a></td>
+    </tr>
+    <tr>
+      <td><a href="/product_adding">PRODUCT ADDING</a></td>
+    </tr>
+    <tr>
+      <td><a href="/product_view">PRODUCT VIEW</a></td>
+    </tr>
+{#    <tr>#}
+{#      <td><a href="/product_editing">PRODUCT EDITING</a></td>#}
+{#    </tr>#}
+    <tr>
+      <td><a href="/stocks">STOCKS</a></td>
+    </tr>
+      <tr>
+      <td><a href="/stock_update">STOCK ADD</a></td>
+    </tr>
+    <tr>
+      <td><a href="/purchase_history">PURCHASE HISTORY</a></td>
+    </tr>
+    <tr>
+      <td><a href="/user_review">VIEW REVIEWS</a></td>
+    </tr>
+  </table>
+</form>
+{%endblock%}

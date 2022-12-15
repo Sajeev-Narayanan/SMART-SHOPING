@@ -1,0 +1,32 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width=50px><b>Sl No</b></th>
+      <th><b>Seller name</b></th>
+      <th><b>Contact</b></th>
+
+      <th><b>Address</b></th>
+
+      <th width=50px>&nbsp;</th>
+      <th width=50px>&nbsp;</th>
+        <th width=50px></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{i['seller_name']}}</td>
+      <td>{{i['email_id']}}
+      <br>&nbsp;{{i['ph_no']}}</td>
+     <td>{{i['house_name']}}<br>
+  {{i['city']}}<br>
+   {{i['district']}}<br>{{i['state']}}<br>
+     <td><img src="{{i['image']}}" height="100" width="100"/> </td>
+      <td><a href="/adm_approved_pending_seller/{{ i['login_id']}}" class="btn btn-success">Approve</a></td>
+      <td><a href="/adm_reject_pending_seller/{{ i['login_id'] }}" class="btn btn-danger">Reject</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

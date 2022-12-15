@@ -1,0 +1,44 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/search_product_post">
+  <table>
+    <tr>
+      <td><input type="text" name="tt" class="form-control"id="textfield" /></td>
+      <td><input type="submit" name="button" class="btn btn-success" id="button" value="SEARCH" /></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th>SI/NO</th>
+      <th>PRODUCT NAME</th>
+      <th>CATEGORY</th>
+{#      <th>QUANTITY</th>#}
+        <th>BRAND</th>
+      <th>PRICE</th>
+        <th>PHOTO</th>
+      <th></th>
+    </tr>
+       {% for i in res %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>{{ i['product_name'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['category_name'] }}</td>
+{#      <td>{{ i['quantity'] }}&nbsp;</td>#}
+        <td>{{ i['brand'] }}</td>
+      <td>{{ i['price'] }}&nbsp;</td>
+        <td><img src="{{ i['image'] }}" width="150px" height="150px"/></td>
+      <td><table>
+        <tr>
+          <td><a href="/product_editing/{{ i['product_id'] }}" class="btn btn-primary">EDIT</a></td>
+        </tr>
+        <tr>
+          <td><a href="/product_deleting/{{ i['product_id'] }}" class="btn btn-danger">DELETE</a></td>
+        </tr>
+      </table></td>
+    </tr>
+        {% endfor %}
+  </table>
+
+ 
+</form>
+{% endblock %}

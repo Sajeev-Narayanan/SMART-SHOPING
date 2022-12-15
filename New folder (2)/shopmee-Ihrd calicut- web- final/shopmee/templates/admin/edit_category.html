@@ -1,0 +1,15 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/adm_update_category">
+  <table class="table table-bordered">
+    <tr>
+        <th><b>Category Name</b></th>
+      <th><input type="text" name="textfield" required class="form-control" id="textfield" value="{{ data['category_name'] }}"required /></th>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" class="btn btn-success" value="UPDATE" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

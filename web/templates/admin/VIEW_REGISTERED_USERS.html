@@ -1,0 +1,28 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/reviewsearchpost">
+  <table >
+    <tr>
+      <td><input type="text" name="textfield" id="textfield"class="form-control" /></td>
+      <td><input type="submit" name="button" class="btn btn-success" id="button" value="SEARCH" /></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th>USERNAME</th>
+      <th>CONTACT_INFO</th>
+      <th>ADDRESS</th>
+
+    </tr>
+       {% for i in val %}
+    <tr>
+      <td>{{ i['user_name'] }}&nbsp;</td>
+      <td>{{ i['phone'] }}<br>{{ i['email'] }}</td>
+      <td>{{ i['place'] }}<br>{{ i['post'] }}<br>{{ i['district'] }}<br>{{ i['pin'] }}&nbsp;</td>
+
+    </tr>
+       {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

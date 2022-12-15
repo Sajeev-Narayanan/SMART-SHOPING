@@ -1,0 +1,27 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="" action="/adm_complaint">
+<input type="hidden" name="c_id" value="complaint_id">
+  <table class="table table-bordered">
+    <tr>
+        <th width=50px><b>Sl No</b></th>
+        <th><b>CustomerName</b></th>
+        <th><b>Email Id</b></th>
+        <th><b>Date</b></th>
+        <th><b>Complaint</b></th>
+      <th width=50px>&nbsp;</th>
+    </tr>
+      {% for k in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ k['customer_name'] }}</td>
+      <td>{{ k['email_id'] }}</td>
+      <td>{{ k['date'] }}</td>
+      <td>{{ k['complaint'] }}</td>
+      <td><a class="btn btn-success" href="/adm_reply/{{ k["complaint_id"]}}">Reply</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

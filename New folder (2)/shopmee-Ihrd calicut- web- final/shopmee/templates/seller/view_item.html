@@ -1,0 +1,21 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td width=50px>Sl_no</td>
+      <td>Item_name</td>
+      <td>Quantity</td>
+      <td>Amount</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['product_name'] }}</td>
+      <td>{{ i['quantity'] }}</td>
+      <td>{{ i['price'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

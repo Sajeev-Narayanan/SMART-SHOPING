@@ -1,0 +1,63 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form action="/seller_delivery_boy_management_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <td width="150"><b>DELIVERY BOY NAME</b></td>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><b>Email ID</b></td>
+      <td><input type="email" name="textfield2" id="textfield2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><b>PHONE NUMBER</b></td>
+      <td><input type="text" name="textfield3" id="textfield3" class="form-control" required pattern="[6789][0-9]{9}" maxlength="10" /></td>
+    </tr>
+    <tr>
+      <td><p><b>HOUSE NAME</b></p></td>
+      <td><input type="text" name="textfield4" id="textfield4" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><b>CITY</b></td>
+      <td><input type="text" name="textfield5" id="textfield5" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td><b>DISTRICT</b></td>
+      <td><select name="select" id="select" class="form-control" required>
+          <option value="kasargod">kasargod</option>
+                    <option value="kannur">Kannur</option>
+
+                    <option value="wayanad">Wayanad</option>
+
+                    <option value="kozhikode">Kozhikode</option>
+
+                    <option value="malappuram">Malappuram</option>
+
+                    <option value="Palakkad">Palakkad</option>
+
+
+      </select></td>
+    </tr>
+    <tr>
+      <td><b>STATE</b></td>
+      <td><input type="text" name="textfield6" id="textfield6" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td><b>POST</b></td>
+      <td><input type="text" name="textfield7" id="textfield7" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td><p><b>PINCODE</b></p></td>
+      <td><input type="text" name="textfield8" id="textfield8" class="form-control" required pattern="[0-9]{6}" maxlength="6"/></td>
+    </tr>
+    <tr>
+      <td><b>IMAGE</b></td>
+      <td><input type="file" name="fileField" id="fileField" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Submit" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

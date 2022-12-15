@@ -1,0 +1,107 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+
+    <tr>
+        <th>SI/NO</th>
+      <th>USERNAME</th>
+      <th>SHOPNAME</th>
+      <th>DATE</th>
+        <td>RATING</td>
+      <th>REVIEW</th>
+    </tr>
+       {% for i in val %}
+    <tr>
+     <td>{{ loop.index }}</td>
+      <td>{{ i['user_name'] }}</td>
+      <td>{{ i['shop_name'] }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+         {% if i["rating"]=="5" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+    </td>
+
+        {% elif i["rating"]=="4.5" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/half.jpg" width="50px" height="50px" />
+    </td>
+      {% elif i["rating"]=="4" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+     {% elif i["rating"]=="3.5" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/half.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+
+        {% elif i["rating"]=="3" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+        {% elif i["rating"]=="2.5" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/half.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+            {% elif i["rating"]=="2" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+
+                {% elif i["rating"]=="1.5" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/half.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+         {% elif i["rating"]=="1" %}
+    <td><img src="/static/full.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+
+      {% elif i["rating"]=="0.5" %}
+    <td><img src="/static/half.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+          {% else %}
+    <td><img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+        <img src="/static/empty.jpg" width="50px" height="50px" />
+    </td>
+    {% endif %}
+      <td>&nbsp;{{ i['review'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

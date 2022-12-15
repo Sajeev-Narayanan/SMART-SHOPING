@@ -1,0 +1,19 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/seller_view_delivery_status">
+  <table class="table table-bordered">
+      <tr width=150px>
+      <th>Delivery BoyName</th>
+      <td>{{ data['deliveryboy_name'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <th>Phone Number</th>
+      <td>&nbsp;{{ data['ph_no'] }}</td>
+    </tr>
+    <tr>
+      <th>Delivery Status</th>
+      <td>{{ data['delstatus'] }}</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

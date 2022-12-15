@@ -1,0 +1,23 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/add_stock_post">
+  <table class="table table-hover">
+    <tr>
+      <th>PRODUCT</th><input type="hidden" name="h1" value="{{ val['stock_id'] }}">
+      <td>{{ val['product_name'] }}</td>
+    </tr>
+
+    <tr>
+      <th>STOCKS</th>
+      <td><label for="textfield"></label>
+      <input type="number" name="textfield" id="textfield" class="form-control"/></td>
+
+    </tr>
+
+    <tr>
+        <td></td>
+      <td colspan="2"><input type="submit" name="UPDATE"class="btn btn-success" id="ADD" value="UPDATE" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

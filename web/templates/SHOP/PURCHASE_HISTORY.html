@@ -1,0 +1,32 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/purchase_history_post">
+  <table>
+    <tr>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" class="form-control"id="textfield" /></td>
+      <td><input type="submit" name="button" class="btn btn-success" id="button" value="SEARCH" /></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th>SI/NO</th>
+      <th>USER INFO</th>
+      <th>AMOUNT</th>
+      <th>DATE</th>
+      <th>PAYMENT TYPE</th>
+        <th>PRODUCTS</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{i['user_name']}},<br>{{ i['phone'] }}</td>
+      <td>{{i['tota'] }}&nbsp;</td>
+      <td>{{i['date'] }}&nbsp;</td>
+      <td>{{i['payment_type'] }}&nbsp;</td>
+      <td>  <a href="/product_total/{{ i["purchase_id"] }}">VIEW MORE</a></td>
+    </tr>
+   {% endfor %}
+  </table>
+</form>
+{% endblock %}

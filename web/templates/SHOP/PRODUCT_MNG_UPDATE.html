@@ -1,0 +1,63 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/product_edit_post"  enctype="multipart/form-data">
+  <table class="table table-hover">
+<input type="hidden" name="pid" value="{{ data["product_id"] }}"/>
+      <th>CATEGORY</th>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+        <option value="{{ data["category_id"] }}">{{ data["category_name"] }}</option>
+        <option>--select--</option>
+           {% for i in val %}
+           <option value="{{ i['category_id'] }}"> {{ i['category_name'] }}</option>
+           {% endfor %}
+    </select>
+      </td>
+    <tr>
+      <th>NAME</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield"class="form-control" id="textfield" value="{{ data["product_name"] }}" /></td>
+    </tr>
+  <tr>
+    <th>IMAGE</th>
+    <td>
+      <label for="textfield"></label>
+      <input type="file" name="file"class="form-control" id="textfield" />
+    </td>
+  </tr>
+    <tr>
+      <th>BRAND</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2"class="form-control" id="textfield2" value="{{ data["brand"] }}" /></td>
+    </tr>
+{#    <tr>#}
+{#      <th>QUANTITY</th>#}
+{#      <td>#}
+{#          <label for="textfield2"></label>#}
+{#      <input type="text" name="textfield4"class="form-control" id="textfield4" value="{{  data["quantity"]  }}" />#}
+{#          <label for="select2"></label>#}
+{#        <select name="select2" id="select2">#}
+{#            <option>{{  data["quantity"]  }}</option>#}
+{#            <option>--select--</option>#}
+{#            <option>100</option>#}
+{#          <option>250</option>#}
+{#          <option>500</option>#}
+{#          <option>1</option>#}
+{#      </select></td>#}
+{#    </tr>#}
+  <tr>
+    <th>PRICE</th>
+    <td>
+      <label for="textfield3"></label>
+      <input type="text" name="textfield3"class="form-control" id="textfield3" value="{{ data["price"] }}"  />
+      <input type="hidden" name="pid" id="textfield3" value="{{ data["product_id"] }}"  />
+    </td>
+  </tr>
+    <tr>
+        <td></td>
+      <td colspan="2"><input type="submit" name="button" class="btn btn-success" id="button" value="UPDATE" /></td>
+    </tr>
+
+  </table>
+</form>
+{%endblock%}

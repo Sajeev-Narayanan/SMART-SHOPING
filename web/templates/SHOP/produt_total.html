@@ -1,0 +1,48 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/product_total">
+  <table class="table table-bordered">
+    <tr>
+      <td colspan="2"><center>SHOP NAME :{{ ss['shop_name'] }}</center></td>
+    </tr><br><br>
+    <tr>
+      <td colspan="2"><center>ADDRESS :<br>{{ ss['place'] }}
+      <br>
+      {{ ss['post'] }}<br>
+      {{ ss['pin'] }}</center></td>
+    </tr>
+    <tr>
+      <td>CUSTOMERNAME :{{ sv['user_name'] }}</td>
+      <td>DATE :{{ sc['date'] }}</td>
+    </tr>
+    <tr>
+        <p></p>
+        <p>
+
+        </p>
+      <td colspan="2"> <table  class="table table-bordered">
+    <tr>
+      <td>SI/NO</td>
+      <td>PRODUCT_NAME</td>
+      <td>PRICE</td>
+      <td>QUANTITY</td>
+      <td>TOTAL</td>
+    </tr>
+          {% for i in val %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['product_name'] }}</td>
+      <td>{{ i['price'] }}</td>
+      <td>{{ i['quantity'] }}</td>
+      <td>{{ i['tota'] }}</td>
+    </tr>
+        {% endfor %}
+  </table></td>
+    </tr>
+    <tr>
+      <td>TOTAL</td>
+      <td>&nbsp;{{ data }}</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+       <tr>
+
+      <td colspan="2">&nbsp;<img src="{{ data['image'] }}" height="100px" width="100px"></td>
+    </tr>
+    <tr>
+        <td width="150"><b>Seller Name</b></td>
+      <td >{{ data['seller_name'] }}</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+    <tr>
+        <td><b>Email ID</b></td>
+      <td>&nbsp;{{ data['email_id'] }}</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+    <tr>
+        <td><b>Phone No</b></td>
+      <td>{{ data['ph_no'] }}</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+
+    <tr>
+        <td><b>House Name</b></td>
+      <td>{{ data['house_name'] }}&nbsp;</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+    <tr>
+        <td><b>City</b></td>
+      <td>&nbsp;{{ data['city'] }}</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+    <tr>
+        <td><b>District</b></td>
+      <td>&nbsp;{{ data['district'] }}</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+    <tr>
+      <td><b>State<</td>
+      <td>{{ data['state'] }}</td>
+{#         <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>#}
+    </tr>
+
+      <tr>
+         
+       <td colspan="2"><center><a href="/seller_edit_profile"class="btn btn-success">Edit</a></td></center>
+      </tr>
+  </table>
+</form>
+{% endblock %}

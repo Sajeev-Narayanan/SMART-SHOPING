@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.shopmee">
+
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:maxSdkVersion="22" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".product_review_gives"></activity>
+        <activity android:name=".custom_view_allocatedproducts" />
+        <activity android:name=".view_allocated_products" />
+        <activity
+            android:name=".delivery_boy_userhome"
+            android:label="@string/title_activity_delivery_boy_userhome"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".update_status" />
+        <activity android:name=".deliveryboy_viewprofile" />
+        <activity android:name=".customer_viewprofile" />
+        <activity android:name=".viewalocatedorders" />
+        <activity android:name=".deliveryboy_changepassword" />
+        <activity android:name=".viewcart" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".userhome"
+            android:label="HOMEPAGE"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".changepassword" />
+        <activity android:name=".sendcomplaint" />
+        <activity android:name=".sendratingandreview" />
+        <activity android:name=".payment" />
+        <activity android:name=".paymentbuy" />
+        <activity android:name=".addtocart" />
+        <activity android:name=".addtobuy" />
+        <activity android:name=".viewreply" />
+        <activity android:name=".viewpreviousorders" />
+        <activity android:name=".viewproduct" />
+        <activity android:name=".Registration"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".viewnearbysellers" />
+        <activity android:name=".login"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".LocationService" />
+    </application>
+
+</manifest>

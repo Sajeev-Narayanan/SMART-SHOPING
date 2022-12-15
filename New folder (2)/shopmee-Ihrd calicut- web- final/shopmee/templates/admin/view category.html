@@ -1,0 +1,37 @@
+{% extends "admin/blank.html" %}
+{% block body %}
+<form name="form1" method="post" action="/viewcategory_search">
+
+<table class="pull-right">
+  <tr>
+    <td><input type="text" name="search" class="form-control"/></td>
+    <td>
+      <input type="submit" value="Search" class="btn btn-success"/>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+  <table  class="table table-bordered">
+    <tr>
+      <th width=50px><b>SlNo</b></th>
+        <th><b>CategoryName</b></th>
+      <th width=50px>&nbsp;</th>
+      <th width=50px>&nbsp;</th>
+    </tr>
+      {% for k in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ k['category_name'] }}</td>
+      <td><a href="/adm_edit_category/{{ k["category_id"]}}"class="btn btn-success">Edit</a></td>
+      <td><a href="/adm_delete_category/{{ k["category_id"]}}" class="btn btn-danger" onclick="return confirm('are you want to delete? ')">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+

@@ -1,0 +1,40 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+        <th width=50px><B>#</B></th>
+      <td><B>CATEGORY</B></td>
+      <td><B>PRODUCT</B></td>
+      <td><B>PRICE</B></td>
+      <td><B>QUANTITY</B></td>
+        <td><B>IMAGE</B> </td>
+        <td><B>DESCRIPTION</B> </td>
+        <td><b>POS</b></td>
+        <td><b>NEG</b></td>
+        <td><b>NEU</b></td>
+        <td width="50px">&nbsp;</td>
+        <td width="50px">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['category_name'] }}</td>
+      <td>{{ i['product_name'] }}</td>
+      <td>{{ i['price'] }}</td>
+        <td>{{ i['quantity'] }}</td>
+        <td><img src="{{ i['image'] }}" height="100px" width="100px"/></td>
+        <td>{{ i['description'] }}</td>
+        <td>{{ i['pos'] }}</td>
+        <td>{{ i['neg'] }}</td>
+         <td>{{ i['neu'] }}</td>
+
+
+
+      <td><a href="/seller_edit_product/{{ i["product_id"]}}"class="btn btn-success">Edit</a></td><td>
+      <a href="/seller_product_management/{{ i["product_id"]}}" class="btn btn-danger" onclick="return confirm('are you want to delete? ')">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

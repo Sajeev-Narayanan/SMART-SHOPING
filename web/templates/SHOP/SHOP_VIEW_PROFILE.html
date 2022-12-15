@@ -1,0 +1,24 @@
+{% extends 'SHOP/shop_index_2.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/view_profile">
+  <table class="table table-bordered">
+    <tr>
+      <th>SHOP NAME</th>
+      <th>{{ val['shop_name'] }}</th>
+    </tr>
+    <tr>
+      <th>EMAIL</th>
+      <th>&nbsp;{{ val['email'] }}</th>
+    </tr>
+    <tr>
+      <th>PHONE</th>
+      <th>{{ val['phone'] }}&nbsp;</th>
+    </tr>
+    <tr>
+      <th>ADDRESS</th>
+      <th>{{ val['place'] }},<br>{{ val['post'] }},<br>{{ val['district'] }},<br>{{ val['pin'] }}</th>
+    </tr>
+  </table>
+</form>
+    <br><br><br><br><br><br><br><br><br>
+{% endblock %}

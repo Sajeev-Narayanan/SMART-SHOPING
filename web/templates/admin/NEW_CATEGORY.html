@@ -1,0 +1,23 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/search_category_post">
+  <center>
+  <table >
+    <tr>
+        <td colspan="2"><center><b>CATEGORY NAME TO BE ADDED</b></center></td>
+    </tr>
+    <tr>
+      <td height="60px" width="400px"><label for="textfield"></label>
+          <input type="text" name="textfield" id="textfield"class="form-control" /></td>
+    </tr><p></p>
+      <tr>
+      <td height="70px"><center><input type="submit" name="ADD" class="btn btn-success" id="ADD" value="         ADD         "/></center></td>
+    </tr>
+  </table>
+  </center>
+</form>
+    <br>
+    <br>
+    <br><br><br><br><br><br>
+
+{% endblock %}

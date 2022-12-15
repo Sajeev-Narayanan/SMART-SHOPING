@@ -1,0 +1,60 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form action="/seller_edit_store_post" method="post" enctype="multipart/form-data">
+<table class="table table-bordered">
+  <tr>
+    <td width=150px>Store Name</td>
+    <td>
+      <input type="text" name="textfield" required class="form-control" id="textfield" value="{{ data['store_name'] }}"/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>
+      <input type="email" name="textfield2"  required class="form-control" id="textfield2"  value="{{ data['email_id'] }}"/></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>
+      <input type="text" name="textfield3"  required class="form-control" pattern="[6789][0-9]{9}" id="textfield3" value="{{ data['phone'] }}"/></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>
+      <input type="text" name="textfield4"  required class="form-control" id="textfield4" value="{{ data['place'] }}"/></td>
+  </tr>
+  <tr>
+    <td>Latitude</td>
+    <td>
+      <input type="text" name="textfield5"  required class="form-control" id="textfield5" value="{{ data['latitude'] }}" /></td>
+  </tr>
+  <tr>
+    <td>Longitude</td>
+    <td>
+      <input type="text" name="textfield6"  required class="form-control" id="textfield6" value="{{ data['longitude'] }}" /></td>
+  </tr>
+  <tr>
+    <td>Manager Name</td>
+    <td>
+      <input type="text" name="textfield7"  required class="form-control" id="textfield7" value="{{ data['manager_name'] }}"/></td>
+  </tr>
+  <tr>
+    <td>Manager Phone</td>
+    <td>
+      <input type="text" name="textfield8"  required class="form-control" pattern="[6789][0-9]{9}" id="textfield8" value="{{ data['manager_phone'] }}" /></td>
+  </tr>
+  <tr>
+    <tr><td></td><td><img src="{{ data['manager_image'] }}" height="150" width="150"></td></tr>
+    <td>Image</td>
+    <td>
+      <input type="file" name="fileField" id="fileField"   class="form-control" /></td>
+  </tr>
+     <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="UPDATE" class="btn btn-success" /></td>
+    </tr>
+</table>
+
+
+
+</form>
+{% endblock %}
+

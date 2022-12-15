@@ -1,0 +1,25 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/complaints_reply">
+  <table class="table table-bordered">
+    <tr>
+        <th>SI/NO</th>
+      <th>USERNAME</th>
+      <th>DATE</th>
+      <th>COMPLAINT</th>
+      <th>STATUS</th>
+      <td></td>
+    </tr>
+       {% for i in val %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['user_name'] }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+        <td>{{ i['complaint'] }}</td>
+      <td>{{ i['status'] }}</td>
+      <td><a href="/send_reply/{{ i["complaint_id"] }}" class="btn btn-success">REPLY</a></td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+{% endblock %}

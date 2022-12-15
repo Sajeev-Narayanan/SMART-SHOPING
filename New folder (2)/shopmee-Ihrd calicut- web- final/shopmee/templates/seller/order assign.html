@@ -1,0 +1,18 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/seller_order_assign_post">
+  <table class="table table-bordered">
+    <tr>
+      <td width=150px>Delivery boy</td>
+      <td><select name="select" id="select">
+          {% for k in data %}
+          <option value="{{ k['login_id'] }}">{{ k['deliveryboy_name'] }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center" ><input type="submit" name="button" id="button" value="Submit" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "store/blank.html" %}
+
+{% block body %}
+<form  method="post" enctype="multipart/form-data">
+
+
+  
+  
+  <table  class="table table-bordered">
+<tr><td colspan="2"><img src="{{ data['manager_image'] }}" height="150" width="150"></td></tr>
+  <tr>
+    <th width="150px">Store Name</th>
+    <td>{{ data['store_name'] }}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{ data['email_id'] }}</td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td>{{ data['phone'] }}</td>
+  </tr>
+  <tr>
+    <th>Place</th>
+    <td>{{ data['place'] }}</td>
+  </tr>
+  <tr>
+    <th>Latitude</th>
+    <td>{{ data['latitude'] }}</td>
+  </tr>
+  <tr>
+    <th>Longitude</th>
+    <td>{{ data['longitude'] }}</td>
+  </tr>
+  <tr>
+    <th>Manager Name</th>
+    <td>{{ data['manager_name'] }}</td>
+  </tr>
+  <tr>
+    <th>Manager Phone</th>
+    <td>{{ data['manager_phone'] }}</td>
+  </tr>
+ 
+</table>
+
+
+
+</form>
+{% endblock %}
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
+
+        <!--<item-->
+            <!--android:id="@+id/nav_gallery"-->
+            <!--android:icon="@drawable/ic_menu_gallery"-->
+            <!--android:title="View Cart" />-->
+
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/chat"
+            android:title="Send Complaints" />
+
+        <item
+            android:id="@+id/nav_view"
+            android:icon="@drawable/chat"
+            android:title="View Complaints" />
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/order"
+            android:title="Nearby Sellers" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_rates"-->
+<!--            android:icon="@drawable/order"-->
+<!--            android:title="RateUs" />-->
+        <item
+            android:id="@+id/navpre"
+            android:icon="@drawable/history"
+            android:title="View My prevoius order" />
+
+
+
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/changepassword"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/lgout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

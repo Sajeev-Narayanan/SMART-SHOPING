@@ -1,0 +1,36 @@
+{% extends 'seller/blank.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/seller_delete_deliveryboy">
+  <table class="table table-bordered">
+    <tr>
+        <td width=50px><b>Sl.No</b></td>
+        <td><b>Deliveryboy Name</b></td>
+        <td><b>Contact</b></td>
+
+        <td><b>Address</b></td>
+{#      <td>City</td>#}
+{#      <td>District</td>#}
+{#      <td>State</td>#}
+{#      <td>Post</td>#}
+{#      <td>Pincode</td>#}
+        <td><b></b></td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}<input type="checkbox" name="ids" value="{{ i['login_id'] }}"/> </td>
+      <td><img src="{{ i['image'] }}" height="100px" width="100px"><br>{{ i['deliveryboy_name'] }}</td>
+      <td>{{ i['email_id'] }}<br>{{ i['ph_no'] }}</td>
+      <td>{{ i['house_name'] }}<br>{{ i['city'] }}<br>{{ i['district'] }}<br>{{ i['state'] }}<br>{{ i['post'] }}<br>{{ i['pincode'] }}</td>
+      <td></td>
+{#      <td>{{ i['login_id'] }}</td>#}
+{#      <td>{{ i['seller_l_id'] }}</td>#}
+    </tr>
+              {% endfor %}
+  <tr>
+      <td colspan="7" align="center"><input type="submit" value="Remove" name="btn" class="btn btn-danger" /> </td>
+  </tr>
+
+
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "store/blank.html" %}
+
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+        <th width="50"><B>SL NO</B></th>
+      <td><B>PRODUCT NAME</B></td>
+      <td><B>QUANTITY</B></td>
+      <td><B>DATE</B></td>
+     
+      </tr>
+      {% for i in res %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['product_name'] }}</td>
+        <td>{{ i['qty'] }}</td> 
+        <td>{{ i['date'] }}</td>   
+  
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
